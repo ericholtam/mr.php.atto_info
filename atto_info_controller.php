@@ -38,8 +38,8 @@ class Atto_info_controller extends Module_controller
         if (! $this->authorized()) {
             $out['error'] = 'Not authorized';
         } else {
-            $prm = new Atto_info_model;
-            foreach ($prm->retrieve_records($serial) as $atto_info) {
+            $atto = new Atto_info_model;
+            foreach ($atto->retrieve_records($serial) as $atto_info) {
                 $out[] = $atto_info->rs;
             }
         }

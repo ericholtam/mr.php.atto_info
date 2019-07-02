@@ -17,7 +17,7 @@ class AttoInfoInit extends Migration
             $table->string('port_address')->nullable();
             $table->string('driver_version')->nullable();
             $table->string('firmware_version')->nullable();
-            $table->string('flash_version ')->nullable();
+            $table->string('flash_version')->nullable();
 
             $table->index('channel');
             $table->index('model');

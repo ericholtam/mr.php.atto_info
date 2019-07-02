@@ -83,7 +83,6 @@ new Atto_info_model;
                 url: appUrl + '/datatables/data',
                 type: "POST",
                 data: function(d){
-                    d.mrColNotEmpty = "atto_info.name"
                 }
             },
             dom: mr.dt.buttonDom,
