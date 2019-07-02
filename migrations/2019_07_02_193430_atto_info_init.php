@@ -10,7 +10,7 @@ class AttoInfoInit extends Migration
         $capsule = new Capsule();
         $capsule::schema()->create('atto_info', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('serial_number')->unique();
+            $table->string('serial_number');
             $table->string('channel')->nullable();
             $table->string('model')->nullable();
             $table->string('port_state')->nullable();
