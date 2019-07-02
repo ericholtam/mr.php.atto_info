@@ -1,0 +1,10 @@
+{
+    "title": "ATTO Info",
+    "channel": "Channel",
+    "model": "Model",
+    "port_state": "Port State",
+    "port_address": "Port Address",
+    "driver_version": "Driver Version",
+    "firmware_version": "Firmware Version",
+    "flash_version": "Flash Version"
+}
