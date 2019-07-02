@@ -23,33 +23,33 @@ channels=(Channel\ 1 Channel\ 2)
 
 if [[ -f "${atto_atfcinfo_binary}" && -f "${atto_atinfo_binary}" && -f "${atto_atflash_binary}" ]]
 then
-    touch "${atto_file}"
+    echo "" > "${atto_file}"
     for channel in ${channels[@]}
     do
         channel_data=$("$atto_atfcinfo_binary" -i all | grep -A 31 "$channel")
         driver_data=$("$atto_atinfo_binary" -i all | grep -A 21 "$channel")
         
-        echo "Channel: $channel" > "${atto_file}"
+        echo "Channel: $channel" >> "${atto_file}"
         
-        echo -n "Model: "
+        echo -n "Model: " >> "${atto_file}"
         echo $("$atto_atfcinfo_binary" -i all | grep -A 31 "$channel" | awk -F: '/^Channel/ { print $2}' | awk '{$1=$1;print}') >> "${atto_file}"
         
-        echo -n "Port State: "
+        echo -n "Port State: " >> "${atto_file}"
         echo $("$atto_atfcinfo_binary" -i all | grep -A 31 "$channel" | awk -F: '/^Port State:/ {print $2}' | awk '{$1=$1;print}') >> "${atto_file}"
         
-        echo -n "Port Address: "
+        echo -n "Port Address: " >> "${atto_file}"
         echo $("$atto_atfcinfo_binary" -i all | grep -A 31 "$channel" | awk '/^Port Address:/ { print $3 }') >> "${atto_file}"
         
-        echo -n "Driver Version: "
+        echo -n "Driver Version: " >> "${atto_file}"
         echo $("$atto_atinfo_binary" -i all | grep -A 21 "$channel" | awk -F: '/^Driver Version:/ { print $2 }' | awk '{$1=$1;print}') >> "${atto_file}"
     
-        echo -n "Firmware Version: "
+        echo -n "Firmware Version: " >> "${atto_file}"
         echo $("$atto_atinfo_binary" -i all | grep -A 21 "$channel" | awk -F: '/^Firmware Version:/ { print $2 }' | awk '{$1=$1;print}') >> "${atto_file}"
         
-        echo -n "Flash Version: "
+        echo -n "Flash Version: " >> "${atto_file}"
         echo $("$atto_atinfo_binary" -i all | grep -A 21 "$channel" | awk -F: '/^Flash Version:/ { print $2 }' | awk '{$1=$1;print}') >> "${atto_file}"
         
-        echo "----------"
+        echo "----------" >> "${atto_file}"
     done
 
 fi
