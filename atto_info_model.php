@@ -3,7 +3,7 @@ class Atto_info_model extends \Model
 {
     public function __construct($serial = '')
     {
-        parent::__construct('id', 'printer'); //primary key, tablename
+        parent::__construct('id', 'atto_info'); //primary key, tablename
         $this->rs['id'] = '';
         $this->rs['serial_number'] = $serial;
         $this->rs['channel'] = '';
