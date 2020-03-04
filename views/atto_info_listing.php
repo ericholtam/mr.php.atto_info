@@ -28,6 +28,7 @@ new Atto_info_model;
 			<th data-i18n="atto_info.driver_version" data-colname='atto_info.driver_version'></th>
 			<th data-i18n="atto_info.firmware_version" data-colname='atto_info.firmware_version'></th>
 			<th data-i18n="atto_info.flash_version" data-colname='atto_info.flash_version'></th>
+			<th data-i18n="department.department" data-colname='department.department'></th>
 		  </tr>
 		</thead>
 
